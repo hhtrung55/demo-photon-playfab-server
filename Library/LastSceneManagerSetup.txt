@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Photon Unity Networking/Demos/DemoHub/DemoHub-Scene-V2.unity
+- path: Assets/Photon Unity Networking/Demos/DemoWorker/DemoWorkerGame-Scene.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

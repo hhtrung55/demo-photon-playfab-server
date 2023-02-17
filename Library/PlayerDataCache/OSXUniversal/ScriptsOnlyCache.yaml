@@ -38,6 +38,7 @@ ScriptsOnlyBuild:
     - InputToEvent
     - InstantiateCube
     - JumpAndRunMovement
+    - Login
     - MaterialPerOwner
     - MessageOverlay
     - MoveByKeys
@@ -90,6 +91,13 @@ ScriptsOnlyBuild:
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_InputField
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -107,6 +115,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.Mask
     - UnityEngine.UI.Outline
+    - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Shadow
@@ -120,6 +129,26 @@ ScriptsOnlyBuild:
     - PhotonTransformViewPositionModel
     - PhotonTransformViewRotationModel
     - PhotonTransformViewScaleModel
+    Unity.TextMeshPro:
+    - TMPro.FaceInfo_Legacy
+    - TMPro.FontAssetCreationSettings
+    - TMPro.KerningTable
+    - TMPro.TMP_Character
+    - TMPro.TMP_FontFeatureTable
+    - TMPro.TMP_FontWeightPair
+    - TMPro.TMP_GlyphAdjustmentRecord
+    - TMPro.TMP_GlyphPairAdjustmentRecord
+    - TMPro.TMP_GlyphValueRecord
+    - TMPro.TMP_InputField/OnChangeEvent
+    - TMPro.TMP_InputField/SelectionEvent
+    - TMPro.TMP_InputField/SubmitEvent
+    - TMPro.TMP_InputField/TextSelectionEvent
+    - TMPro.TMP_InputField/TouchScreenKeyboardEvent
+    - TMPro.TMP_Sprite
+    - TMPro.TMP_SpriteCharacter
+    - TMPro.TMP_SpriteGlyph
+    - TMPro.TMP_Style
+    - TMPro.VertexGradient
     UnityEngine.CoreModule:
     - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
@@ -128,6 +157,11 @@ ScriptsOnlyBuild:
     UnityEngine.IMGUIModule:
     - UnityEngine.GUISettings
     - UnityEngine.GUIStyle
+    UnityEngine.TextCoreFontEngineModule:
+    - UnityEngine.TextCore.FaceInfo
+    - UnityEngine.TextCore.Glyph
+    - UnityEngine.TextCore.GlyphMetrics
+    - UnityEngine.TextCore.GlyphRect
     UnityEngine.UI:
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
@@ -142,7 +176,10 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Scrollbar/ScrollEvent
     - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
-  methodsToPreserve: []
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayFabAuthenticator
+    methodName: AuthenticateWithPlayFab
   sceneClasses:
     Assets/Photon Unity Networking/Demos/Demo2DJumpAndRunWithPhysics/Demo2DJumpAndRunWithPhysics-Scene.unity:
     - Class: 1
@@ -482,6 +519,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2014}
     - Class: 114
+      Script: {instanceID: 2198}
+    - Class: 114
       Script: {instanceID: 2650}
     - Class: 114
       Script: {instanceID: 2670}
@@ -514,13 +553,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4124}
     - Class: 114
+      Script: {instanceID: 4250}
+    - Class: 114
       Script: {instanceID: 4260}
     - Class: 114
+      Script: {instanceID: 4266}
+    - Class: 114
+      Script: {instanceID: 4530}
+    - Class: 114
       Script: {instanceID: 4744}
+    - Class: 114
+      Script: {instanceID: 5052}
     - Class: 114
       Script: {instanceID: 5156}
     - Class: 114
       Script: {instanceID: 5166}
+    - Class: 114
+      Script: {instanceID: 5240}
     - Class: 114
       Script: {instanceID: 5430}
     - Class: 114
@@ -531,6 +580,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5640}
     - Class: 114
       Script: {instanceID: 5824}
+    - Class: 114
+      Script: {instanceID: 5976}
     - Class: 114
       Script: {instanceID: 6220}
     - Class: 114
@@ -583,6 +634,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8158}
     - Class: 114
       Script: {instanceID: 8214}
+    - Class: 114
+      Script: {instanceID: 27844}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -1549,7 +1602,7 @@ ScriptsOnlyBuild:
     className: UnityOnMouseDragMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: fadf7bb767a596268959b03a39d48d43
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayFabAuthenticator
@@ -2579,6 +2632,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core.dll
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Login
   platform: 2
   scenePathNames:
   - Assets/Photon Unity Networking/Demos/DemoHub/DemoHub-Scene-V2.unity
@@ -2595,4 +2654,4 @@ ScriptsOnlyBuild:
   - Assets/Photon Unity Networking/Demos/DemoFriendsAndCustomAuth/DemoFriends-Scene.unity
   - Assets/Photon Unity Networking/Demos/DemoChangeOwner/DemoChangeOwner-Scene.unity
   - Assets/Photon Unity Networking/Demos/Demo2DJumpAndRunWithPhysics/Demo2DJumpAndRunWithPhysics-Scene.unity
-  playerPath: /Users/trung.hoang/Study/Demo Playfab With Photon/buildv2.app
+  playerPath: /Users/trung.hoang/Study/Demo Playfab With Photon/build.app

@@ -1,15 +1,21 @@
+using System;
 using System.Collections.Generic;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
+using TMPro;
 
 public class PlayFabAuthenticator : MonoBehaviour {
 
     private string _playFabPlayerIdCache;
+    
+    public TMP_InputField username;
+    public TMP_InputField password;
 
 
     //Run the entire thing on awake
-    public void Awake() {
+    public void Awake()
+    {
         AuthenticateWithPlayFab();
         DontDestroyOnLoad(gameObject);
     }
@@ -24,18 +30,21 @@ public class PlayFabAuthenticator : MonoBehaviour {
      * We pass RequestPhotonToken as a callback to be our next step, if
      * authentication was successful.
      */
-    private void AuthenticateWithPlayFab()  {
+    public void AuthenticateWithPlayFab()  {
         LogMessage("PlayFab authenticating using Custom ID...");
+        string username = this.username.text;
+        string pwd = this.password.text;
 
-        // PlayFabClientAPI.LoginWithCustomID(new LoginWithCustomIDRequest()
-        // {
-        //     CreateAccount = true,
-        //     CustomId = PlayFabSettings.DeviceUniqueIdentifier+"EDITOR"
-        // }, RequestPhotonToken, OnPlayFabError);
+        if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(pwd))
+        {
+            username = "trunghoang1";
+            pwd = "123123";
+        }
+        
         LoginWithPlayFabRequest loginRequest = new LoginWithPlayFabRequest
         {
-            Username = "trunghoang2",
-            Password = "123456"
+            Username = username,
+            Password = pwd,
         };
         PlayFabClientAPI.LoginWithPlayFab(loginRequest, RequestPhotonToken, OnPlayFabError);
     }

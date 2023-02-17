@@ -313,6 +313,7 @@
 -r:"Library/Bee/artifacts/200b0aPDevDbg.dag/Unity.VisualScripting.Flow.ref.dll"
 -r:"Library/Bee/artifacts/200b0aPDevDbg.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/200b0aPDevDbg.dag/UnityEngine.UI.ref.dll"
+"Assets/Login.cs"
 "Assets/Photon Unity Networking/Demos/Demo2DJumpAndRunWithPhysics/Scripts/Demo2DJumpAndRun.cs"
 "Assets/Photon Unity Networking/Demos/Demo2DJumpAndRunWithPhysics/Scripts/JumpAndRunMovement.cs"
 "Assets/Photon Unity Networking/Demos/DemoBoxes/ColorPerPlayer.cs"
